@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="인디고에서 즐겨찾는 레포츠 정보를 찾아보세요"/>
+    <meta name="keywords" content="indigo,인디고,레포츠,reports">
+    <meta name="author" content="cho hwan joon">
+
+    <!-- sns 오픈그래픽 -->
+    <meta property="og:title" content="인디고">
+    <meta property="og:url" content="https://pam7464.github.io/indigo/">
+    <meta property="og:image" content="./images/og.jpg">
+    <meta property="og:description" content="인디고에서 즐겨찾는 레포츠 정보를 찾아보세요">
+
+    <!-- 트위터카드 -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="인디고">
+    <meta name="twitter:url" content="https://pam7464.github.io/indigo/">
+    <meta name="twitter:image" content="./images/og.jpg">
+    <meta name="twitter:description" content="인디고에서 즐겨찾는 레포츠 정보를 찾아보세요">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- 폰트(noto sans kr) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- BXSlider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Indigo</title>
+    <style>
+        .clearfix::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        :root{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight:400;
+            font-size:16px;
+            line-height:29px;
+            color:#616161;
+        }
+        .container{
+            width:1132px;
+            margin:0 auto;
+        }
+        .full-container{
+            width:100%;
+        }
+
+        h1,h2,h3{
+            font-size:26px;
+            color:#3f51b5;
+            text-transform:uppercase;
+        }
+        h2{
+            font-size:42px;
+        }
+        h3{
+            font-size:16px;
+        }
+        .hidden-tit{
+            height:0;
+            overflow:hidden;
+        }
+        .sec{
+            margin-bottom:120px;
+        }
+
+        /* 스킵 메뉴 스타일 */
+        .skip-menu a{
+            position:fixed;
+            left:0;
+            top:-100px;
+            z-index:10000;
+
+            padding:10px 20px;
+            background-color:#616161;
+            font-size:1.4em;
+            color:#fff;
+        }
+        .skip-menu a:focus{
+            top:0;
+        }
+
+        .wrap{
+            overflow:hidden;
+        }
+        /* HEADER스타일 시작 */
+        .header{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            z-index:1000;
+            padding:24px 50px;
+            background-color:#fff;
+        }
+        .header .container h1{float:left}
+        .header .container nav{float:right}
+        .header .container nav ul li{
+            display:inline-block;
+            margin-left:18px;
+            text-transform: uppercase;
+            color:#3f51b5;
+        }
+        /* HEADER스타일 끝 */
+
+        /* SLIDER스타일 시작 */
+        .slider{
+            position:relative;
+            z-index:900;
+            margin-top:77px;
+        }   
+        .bx-wrapper{
+            margin-bottom:0;
+            border:none;
+            box-shadow:none;
+        }
+        .bx-controls-direction{display:none;}
+        .bx-pager.bx-default-pager{
+            bottom:30px;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            width:16px;
+            height:16px;
+            border-radius:50%;
+            background-color: #616161;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a.active,
+        .bx-wrapper .bx-pager.bx-default-pager a:hover{
+            background-color:#3f51b5;
+        }
+        /* SLIDER스타일 끝 */
+
+
+        /* WE ARE 스타일 시작 */
+        .we-are h2{
+            float:left;
+            width:484px;
+            margin-right:20px;
+            border-right:2px solid #616161
+        }
+        .we-are>.container>p{
+            float:left;
+            width:628px;
+        }
+        .we-are ul{float:left;}
+        .we-are li{
+            float:left;
+            width:268px;
+            margin-right:20px;
+        }
+        .we-are li:last-child{
+            margin-right:0;
+        }
+        /* WE ARE 스타일 끝 */
+    </style>
+</head>
+<body>
+    <!-- 스킵메뉴 시작-->
+    <div class="skip-menu">
+        <a href="#we-are">we are 바로가기</a>
+        <a href="#work">work 바로가기</a>
+        <a href="#blog">blog 바로가기</a>
+        <a href="#contact">contact us 바로가기</a>
+    </div>
+    <!-- 스킵메뉴 끝 -->
+
+
+    <section class="wrap">
+        <header class="header">
+            <div class="container full-container clearfix">
+                <h1 class="logo">
+                    <a href="index.html">indigo</a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="#we-are">we are</a></li>
+                        <li><a href="#work">work</a></li>
+                        <li><a href="#blog">blog</a></li>
+                        <li><a href="#contact">contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="sec slider">
+            <div class="container full-container">
+                <h2 class="hidden-tit">slider</h2>
+                <div class="slide">
+                    <div><img src="./images/slide01.jpg" alt="슬라이드1"></div>
+                    <div><img src="./images/slide01.jpg" alt="슬라이드2"></div>
+                    <div><img src="./images/slide01.jpg" alt="슬라이드3"></div>
+                    <div><img src="./images/slide01.jpg" alt="슬라이드4"></div>
+                    <div><img src="./images/slide01.jpg" alt="슬라이드5"></div>
+                </div>
+
+            </div>
+        </section>
+        <section class="sec we-are" id="we-are">
+            <div class="container clearfix">
+                    <h2>we are</h2>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                        piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+                    </p>
+                    <ul class="clearfix">
+                        <li>
+                            <div class="ico-box"><img src="./images/ico-pro01.jpg" alt="home"></div>
+                            <h3>home</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
+                            </p>
+                        </li>
+                        <li>
+                            <div class="ico-box"><img src="./images/ico-pro02.jpg" alt="we are"></div>
+                            <h3>we are</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
+                            </p>
+                        </li>
+                        <li>
+                            <div class="ico-box"><img src="./images/ico-pro03.jpg" alt="work"></div>
+                            <h3>work</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
+                            </p>
+                        </li>
+                        <li>
+                            <div class="ico-box"><img src="./images/ico-pro04.jpg" alt="blog"></div>
+                            <h3>blog</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
+                            </p>
+                        </li>
+                    </ul>
+            </div>
+        </section>
+        <section class="sec divider">
+            <div class="container">
+                <hr>
+            </div>
+        </section>
+        <section class="sec work" id="work">
+            <div class="container full-container">
+                <h2>work</h2>
+                <div class="work-list">
+                    <ul>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work01.jpg" alt="달리기"></div>
+                            <div class="work-txt">
+                                <h3>달리기</h3>
+                                <h4>육상</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work02.jpg" alt="미식축구"></div>
+                            <div class="work-txt">
+                                <h3>미식축구</h3>
+                                <h4>구기</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work03.jpg" alt="헬스"></div>
+                            <div class="work-txt">
+                                <h3>헬스</h3>
+                                <h4>트레이닝</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work04.jpg" alt="달리기2"></div>
+                            <div class="work-txt">
+                                <h3>달리기2</h3>
+                                <h4>육상</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work05.jpg" alt="권투"></div>
+                            <div class="work-txt">
+                                <h3>권투</h3>
+                                <h4>격투기</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work06.jpg" alt="아이스하키"></div>
+                            <div class="work-txt">
+                                <h3>아이스하키</h3>
+                                <h4>빙상</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work07.jpg" alt="스케이트보드"></div>
+                            <div class="work-txt">
+                                <h3>스케이트보드</h3>
+                                <h4>레포츠</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="work-img"><img src="./images/img-work08.jpg" alt="농구"></div>
+                            <div class="work-txt">
+                                <h3>농구</h3>
+                                <h4>구기</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="sec divider">
+            <div class="container"></div>
+             <hr>
+        </section>
+        <section class="sec blog" id="blog">
+            <div class="container">
+                <h2>blog</h2>
+                <div class="blog-list">
+                    <ul>
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
+                            <h3>2021-12-14</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
+                        </li>
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
+                            <h3>2021-12-10</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
+                        </li>
+                        <li>
+                            <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
+                            <h3>2021-12-02</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="sec contact" id="contact">
+            <div class="container">
+                <h2>contact</h2>
+                <form>
+                    <label for="name">name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <label for="phone">phone</label>
+                    <input type="text" name="phone" id="phone" placeholder="Phone">
+                    <label for="email">email address</label>
+                    <input type="text" name="email" id="email" placeholder="Email Address">
+                    <label for="message">message</label>
+                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                    <input type="submit" value="SEND MESSAGE">
+                    
+                </form>
+            </div>
+        </section>
+        <section class="sec map">
+            <div class="container">
+                <h2 class="hidden-tit">map</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25308.149566155713!2d126.65974294482596!3d37.54284151366479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7e16f11f3635%3A0xd3d8fb87825f4f2a!2z7Jew7Z2s7KeB7JeF7KCE66y47ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1639463381933!5m2!1sko!2skr" width="1132" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <address>indigo</address>
+            </div>
+        </footer>
+    </section>
+    <script>
+        $(document).ready(function(){
+          $('.slide').bxSlider();
+        });
+    </script>
+</body>
+</html>
