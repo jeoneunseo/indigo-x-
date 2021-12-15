@@ -28,8 +28,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- BXSlider -->
+
+    <!-- BXSlider  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -57,7 +57,6 @@
         .full-container{
             width:100%;
         }
-
         h1,h2,h3{
             font-size:26px;
             color:#3f51b5;
@@ -76,7 +75,14 @@
         .sec{
             margin-bottom:120px;
         }
-
+        .sec:last-of-type{
+            margin-bottom:0;
+        }
+        hr{
+            height:2px;
+            background-color:#e0e0e0;
+            border:none;
+        }
         /* 스킵 메뉴 스타일 */
         .skip-menu a{
             position:fixed;
@@ -92,36 +98,37 @@
         .skip-menu a:focus{
             top:0;
         }
-
         .wrap{
             overflow:hidden;
         }
-        /* HEADER스타일 시작 */
+
+        /* HEADER 스타일 시작 */
         .header{
             position:fixed;
             left:0;
             right:0;
             top:0;
             z-index:1000;
-            padding:24px 50px;
+            border-bottom:1px solid #e0e0e0;
+            padding:24px 52px;
             background-color:#fff;
         }
-        .header .container h1{float:left}
-        .header .container nav{float:right}
+        .header .container h1{float:left;}
+        .header .container nav{float:right;}
         .header .container nav ul li{
             display:inline-block;
-            margin-left:18px;
-            text-transform: uppercase;
+            margin-left:22px;
+            text-transform:uppercase;
             color:#3f51b5;
         }
-        /* HEADER스타일 끝 */
+        /* HEADER 스타일 끝 */
 
-        /* SLIDER스타일 시작 */
+        /* SLIDER 스타일 시작 */
         .slider{
             position:relative;
             z-index:900;
             margin-top:77px;
-        }   
+        }
         .bx-wrapper{
             margin-bottom:0;
             border:none;
@@ -135,36 +142,208 @@
             width:16px;
             height:16px;
             border-radius:50%;
-            background-color: #616161;
+            background-color:#616161;
         }
         .bx-wrapper .bx-pager.bx-default-pager a.active,
         .bx-wrapper .bx-pager.bx-default-pager a:hover{
             background-color:#3f51b5;
         }
-        /* SLIDER스타일 끝 */
-
+        /* SLIDER 스타일 끝 */
 
         /* WE ARE 스타일 시작 */
         .we-are h2{
             float:left;
             width:484px;
             margin-right:20px;
-            border-right:2px solid #616161
+            margin-bottom:122px;
+            border-right:2px solid #e0e0e0;
+            padding:7.5px 0;
         }
         .we-are>.container>p{
             float:left;
             width:628px;
+            margin-top:-10px;
         }
-        .we-are ul{float:left;}
+        .we-are ul{
+            float:left;
+        }
         .we-are li{
             float:left;
             width:268px;
             margin-right:20px;
-        }
+        }        
         .we-are li:last-child{
             margin-right:0;
         }
+        .we-are li::before{
+            content:'';
+            display:block;
+            height:50px;
+            margin-bottom:21px;
+            background:url(./images/ico-pro01.jpg) no-repeat center top;
+        }
+        .we-are li:nth-child(2)::before{
+            background-image:url(./images/ico-pro02.jpg);
+        }
+        .we-are li:nth-child(3)::before{
+            background-image:url(./images/ico-pro03.jpg);
+        }
+        .we-are li:nth-child(4)::before{
+            background-image:url(./images/ico-pro04.jpg);
+        }
+        .we-are h3{
+            margin-bottom:10px;
+            text-align:center;
+        }
+        .we-are h3+p{
+            font-size:14px;
+            line-height:23px;
+        }
         /* WE ARE 스타일 끝 */
+
+        /* Work 스타일 시작 */
+        .work h2{
+            width:1132px;
+            margin:0 auto 86px;
+        }
+        .work li{
+            position:relative;
+            float:left;
+            width:25%;
+            overflow:hidden;
+        }
+        .work .work-txt{
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            transform:translateY(100%);
+            transition:0.3s;
+
+            padding:30px;
+            font-size:11px;
+            color:#fff; 
+            opacity:0;           
+        }
+        .work li:hover .work-txt{
+            transform:translateY(0);
+            opacity:1;
+        }
+        .work .work-txt h3{
+            font-size:23px;
+            color:#fff;
+        }
+        .work li::before{
+            content:'';
+            display:block;
+            background-color:#3f51b5;
+            opacity:0.86;
+
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            transform:translateY(-100%);
+            transition:0.3s;
+        }
+        .work li:hover::before{
+            transform:translateY(0);
+        }
+        /* Work 스타일 끝 */
+        .mine-divider hr{
+            width:20px;
+            margin:0 auto;
+            background-color:#3f51b5;
+        }
+
+        /* BLOG,CONTACT 스타일 시작 */
+        .blog h2,.contact h2,.blog li,.contact fieldset{
+            float:left;
+            width:268px;
+            margin-right:20px;
+        }
+        .contact fieldset{
+            width:412px;
+            border:none;
+        }
+        .blog .blog-list,.contact form{
+            float:left;
+            width:844px;
+        }
+        .blog li:last-child,.contact fieldset:last-child{
+            margin-right:0;
+        }
+        .blog .blog-img{
+            margin-bottom:3px;
+        }
+        .blog h3{
+            font-weight:100;
+            font-size:11px;
+            color:#9e9e9e;
+        }
+        .blog h3+p{
+            line-height:27px;
+        }
+
+        .blog li{
+            perspective:500px;
+        }
+        .blog li .li-content{
+            transform:rotateY(0);
+            backface-visibility:hidden;
+            transition:0.3s;
+        }
+        .blog li:hover .li-content{
+            transform:rotateY(360deg);
+        }
+        form label,form input,form textarea{
+            width:100%;
+        }
+        form label{
+            height:0;
+            overflow:hidden;
+        }
+        form fieldset:first-child input,form textarea{
+            border:none;
+            margin-bottom:12px;
+            border-bottom:1px solid #757575;
+            padding:12px;
+            background-color:#fff;
+            font-size:12px;
+            color:#3f51b5;
+        }
+        form fieldset:first-child input::placeholder,form textarea::placeholder{
+            font-size:12px;
+            color:#3f51b5;
+        }
+        form fieldset:last-child{
+            text-align:right;
+        }
+        form textarea{
+            height:142px;
+        }
+        form input[type="submit"]{
+            display:inline-block;
+            width:124px;
+            border:none;
+            padding:12px 0;
+            background-color:#3f51b5;
+            font-size:12px;
+            color:#fff;
+            text-align:center;
+        }
+        /* BLOG,CONTACT 스타일 끝 */
+
+        .footer address{
+            padding:10px 0;
+            text-align:center;
+            color:#3f51b5;
+            font-style:normal;
+            text-transform:uppercase;
+        }
+       
     </style>
 </head>
 <body>
@@ -203,48 +382,35 @@
                     <div><img src="./images/slide01.jpg" alt="슬라이드2"></div>
                     <div><img src="./images/slide01.jpg" alt="슬라이드3"></div>
                     <div><img src="./images/slide01.jpg" alt="슬라이드4"></div>
-                    <div><img src="./images/slide01.jpg" alt="슬라이드5"></div>
+                    <div><img src="./images/slide01.jpg" alt="슬라이드5"></div>                    
                 </div>
-
             </div>
         </section>
         <section class="sec we-are" id="we-are">
             <div class="container clearfix">
-                    <h2>we are</h2>
-                    <p>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                        piece of classical Latin literature from 45 BC, making it over 2000 years old. 
-                    </p>
-                    <ul class="clearfix">
-                        <li>
-                            <div class="ico-box"><img src="./images/ico-pro01.jpg" alt="home"></div>
-                            <h3>home</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
-                            </p>
-                        </li>
-                        <li>
-                            <div class="ico-box"><img src="./images/ico-pro02.jpg" alt="we are"></div>
-                            <h3>we are</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
-                            </p>
-                        </li>
-                        <li>
-                            <div class="ico-box"><img src="./images/ico-pro03.jpg" alt="work"></div>
-                            <h3>work</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
-                            </p>
-                        </li>
-                        <li>
-                            <div class="ico-box"><img src="./images/ico-pro04.jpg" alt="blog"></div>
-                            <h3>blog</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque labore dignissimos fugit?
-                            </p>
-                        </li>
-                    </ul>
+                <h2>we are</h2>
+                <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                    piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                </p>
+                <ul class="clearfix">
+                    <li>                        
+                        <h3>home</h3>
+                        <p>ipsum,  sit amet consectetur adipisicing elit. Ullam  molestias excepturi.</p>
+                    </li>
+                    <li>                        
+                        <h3>we are</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam facere  excepturi.</p>
+                    </li>
+                    <li>                        
+                        <h3>work</h3>
+                        <p>Lorem ipsum, dolor sit amet  adipisicing elit. Ullam facere molestias excepturi.</p>
+                    </li>
+                    <li>
+                        <h3>blog</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur  elit. Ullam facere molestias excepturi.</p>
+                    </li>
+                </ul>
             </div>
         </section>
         <section class="sec divider">
@@ -256,116 +422,127 @@
             <div class="container full-container">
                 <h2>work</h2>
                 <div class="work-list">
-                    <ul>
+                    <ul class="clearfix">
                         <li>
                             <div class="work-img"><img src="./images/img-work01.jpg" alt="달리기"></div>
                             <div class="work-txt">
                                 <h3>달리기</h3>
                                 <h4>육상</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work02.jpg" alt="미식축구"></div>
                             <div class="work-txt">
                                 <h3>미식축구</h3>
                                 <h4>구기</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work03.jpg" alt="헬스"></div>
                             <div class="work-txt">
                                 <h3>헬스</h3>
                                 <h4>트레이닝</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work04.jpg" alt="달리기2"></div>
                             <div class="work-txt">
                                 <h3>달리기2</h3>
                                 <h4>육상</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work05.jpg" alt="권투"></div>
                             <div class="work-txt">
                                 <h3>권투</h3>
                                 <h4>격투기</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work06.jpg" alt="아이스하키"></div>
                             <div class="work-txt">
                                 <h3>아이스하키</h3>
                                 <h4>빙상</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work07.jpg" alt="스케이트보드"></div>
                             <div class="work-txt">
                                 <h3>스케이트보드</h3>
                                 <h4>레포츠</h4>
-                            </div>
+                            </div>                            
                         </li>
                         <li>
                             <div class="work-img"><img src="./images/img-work08.jpg" alt="농구"></div>
                             <div class="work-txt">
                                 <h3>농구</h3>
                                 <h4>구기</h4>
+                            </div>                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="sec mine-divider">
+            <div class="container">
+                <hr>
+            </div>
+        </section>
+        <section class="sec blog" id="blog">
+            <div class="container clearfix">
+                <h2>blog</h2>
+                <div class="blog-list">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
+                                <h3>2021-12-14</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, cumque!</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
+                                <h3>2021-12-10</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, cumque!</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="li-content">
+                                <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
+                                <h3>2021-12-02</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, cumque!</p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
-        <section class="sec divider">
-            <div class="container"></div>
-             <hr>
-        </section>
-        <section class="sec blog" id="blog">
-            <div class="container">
-                <h2>blog</h2>
-                <div class="blog-list">
-                    <ul>
-                        <li>
-                            <div class="blog-img"><img src="./images/img-blog01.jpg" alt="블로그1"></div>
-                            <h3>2021-12-14</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
-                        </li>
-                        <li>
-                            <div class="blog-img"><img src="./images/img-blog02.jpg" alt="블로그2"></div>
-                            <h3>2021-12-10</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
-                        </li>
-                        <li>
-                            <div class="blog-img"><img src="./images/img-blog03.jpg" alt="블로그3"></div>
-                            <h3>2021-12-02</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quis!</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
         <section class="sec contact" id="contact">
-            <div class="container">
+            <div class="container clearfix">
                 <h2>contact</h2>
-                <form>
-                    <label for="name">name</label>
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <label for="phone">phone</label>
-                    <input type="text" name="phone" id="phone" placeholder="Phone">
-                    <label for="email">email address</label>
-                    <input type="text" name="email" id="email" placeholder="Email Address">
-                    <label for="message">message</label>
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
-                    <input type="submit" value="SEND MESSAGE">
-                    
+                <form class="clearfix">
+                    <fieldset>
+                        <label for="name">name</label>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <label for="phone">phone</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone">
+                        <label for="email">email address</label>
+                        <input type="email" name="email" id="email" placeholder="Email Address">
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">message</label>
+                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                        <input type="submit" value="SEND MESSAGE">
+                    </fieldset>
                 </form>
             </div>
         </section>
         <section class="sec map">
             <div class="container">
                 <h2 class="hidden-tit">map</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25308.149566155713!2d126.65974294482596!3d37.54284151366479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7e16f11f3635%3A0xd3d8fb87825f4f2a!2z7Jew7Z2s7KeB7JeF7KCE66y47ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1639463381933!5m2!1sko!2skr" width="1132" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.518461558965!2d126.67502091515327!3d37.54284703324238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7e16f11f3635%3A0xd3d8fb87825f4f2a!2z7Jew7Z2s7KeB7JeF7KCE66y47ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1639463472606!5m2!1sko!2skr" width="1132" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </section>
         <footer class="footer">
             <div class="container">
@@ -375,7 +552,7 @@
     </section>
     <script>
         $(document).ready(function(){
-          $('.slide').bxSlider();
+            $('.slide').bxSlider();
         });
     </script>
 </body>
